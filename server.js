@@ -11,9 +11,7 @@ io.on('connection', function(socket) {
 
   socket.on('message', function(message) {
     console.log('Message received: ' + message.text);
-    socket.broadcast.emit('message', message);
-    //sends to everyone but the person who sent it.
-    //if you want to include the sender, use io.emit
+    io.emit('message', message);
   });
 
   //two arguments: event name, data to send

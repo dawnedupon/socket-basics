@@ -7,6 +7,9 @@ socket.on('connect', function() {
 socket.on('message', function(message) {
   console.log('New message:');
   console.log(message.text);
+
+  //show messages in .messages
+  jQuery('.messages').append('<p>' + message.text + '</p>');
 });
 
 //Handles submitting of new message
@@ -23,7 +26,7 @@ $form.on('submit', function(event) {
     text: $message.val()
   });
 
-  //Delete the value after sending it
+  //Delete the value from console after sending it
   $message.val('');
 
 });
