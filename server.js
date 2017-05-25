@@ -16,7 +16,7 @@ io.on('connection', function(socket) {
 
   //two arguments: event name, data to send
   socket.emit('message', {
-    text: 'Hello! Time to chat with Peppercorn.'
+    text: 'Hello! Welcome to CornCat.'
   });
 });
 
