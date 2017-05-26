@@ -2,13 +2,22 @@ var name = getQueryVariable('name') || 'Anonymous';
 var room = getQueryVariable('room');
 var socket = io();
 
+console.log(name + ' wants to join ' + room + '.');
+
+//Update h1 tag .room-name
+jQuery('.room-name').text(room);
+
 socket.on('connect', function() {
   console.log('Connected to socket.io server.');
+  socket.emit('joinRoom', {
+    name: name,
+    room: room
+  });
 });
 
 socket.on('message', function(message) {
   var momentTimestamp = moment.utc(message.timestamp);
-  var $message = jQuery('.messages');
+  var $message = jQuery('#messages');
 
   console.log('New message:');
   console.log(message.text);
@@ -36,3 +45,5 @@ $form.on('submit', function(event) {
   $message.val('');
 
 });
+
+//Autoscroll to bottom of .messages

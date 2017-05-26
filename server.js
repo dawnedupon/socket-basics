@@ -10,6 +10,16 @@ app.use(express.static(__dirname + '/public'));
 io.on('connection', function(socket) {
   console.log('User connected via socket.io!');
 
+  socket.on('joinRoom', function(req) {
+    socket.join(req.room);
+    //sends to everyone in that room but the current socket
+    socket.broadcast.to(req.room).emit('message', {
+      name: 'System',
+      text: req.name + ' has joined this room.',
+      timestamp: moment().valueOf()
+    });
+  });
+
   socket.on('message', function(message) {
     console.log('Message received: ' + message.text);
 

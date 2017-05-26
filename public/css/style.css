@@ -46,7 +46,7 @@ a, h1, input[type='submit'] {
 }
 
 label {
-  margin: 0 0 12px 0;
+  margin: 6px 0;
 }
 
 h1 {
@@ -88,7 +88,7 @@ a:active, a:visited {
   width: 100%;
   height: auto;
   min-height: 36px;
-  max-height: 500px;
+  max-height: 200px;
   margin: 0 0 24px 0;
   padding: 16px;
   overflow-y: auto;
@@ -100,7 +100,7 @@ a:active, a:visited {
 input[type=text] {
   width: 100%;
   height: 36px;
-  margin: 0 auto;
+  margin: 6px auto 16px auto;
   padding: 0 8px;
   outline: none;
   background: #E6EBE0;
@@ -111,7 +111,7 @@ input[type=text] {
 input[type=submit] {
   width: 160px;
   height: 42px;
-  margin: 24px 0 0 0;
+  margin: 8px 0;
   padding: 0 16px;
   font-size: 15px;
   letter-spacing: 1px;
