@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Let's chat with Peppercorn!</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <a href="/index.html">Change Settings</a>
+      <div class="messages"></div>
+      <form id="message-form">
+        <input type="text" name="message" />
+        <input type="submit" value="Send"/>
+      </form>
+    </div>
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/socket.io.min.js"></script>
+    <script src="/js/moment.min.js"></script>
+    <script src="/js/queryparams.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
