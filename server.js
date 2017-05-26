@@ -19,6 +19,7 @@ io.on('connection', function(socket) {
 
   //two arguments: event name, data to send
   socket.emit('message', {
+    name: 'System',
     text: 'Hello! Welcome to CatRoulette.',
     timestamp: moment().valueOf()
   });
