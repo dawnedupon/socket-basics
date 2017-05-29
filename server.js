@@ -36,6 +36,7 @@ function sendCurrentUsers(socket) {
 io.on('connection', function(socket) {
   console.log('User connected via socket.io!');
 
+  //User disconnects
   socket.on('disconnect', function() {
     var userData = clientInfo[socket.id];
 
@@ -50,6 +51,7 @@ io.on('connection', function(socket) {
     }
   });
 
+  //Users joins room
   socket.on('joinRoom', function(req) {
     clientInfo[socket.id] = req;
     socket.join(req.room);

@@ -27,19 +27,6 @@ p {
   letter-spacing: 0.01em;
 }
 
-  p.message-text {
-    margin: 8px 0 20px 0;
-  }
-
-  span.name {
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-
-  span.timestamp {
-    color: #9E9E9E;
-  }
-
 a, h1, input[type='submit'] {
   font-family: 'Roboto Slab', 'Times New Roman', serif;
   font-weight: 400;
@@ -76,11 +63,11 @@ a:active, a:visited {
   width: 90%;
   max-width: 600px;
   height: auto;
-  margin: 72px auto;
+  margin: 48px auto;
   padding: 32px 24px;
   background: #EFF2EB;
-  border-top: 5px solid #BFD7D4;
-  border-bottom: 8px solid #9BC1BC;
+  border-top: 8px solid #BFD7D4;
+  border-bottom: 5px solid #9BC1BC;
   border-radius: 3px;
 }
 
@@ -88,14 +75,34 @@ a:active, a:visited {
   width: 100%;
   height: auto;
   min-height: 36px;
-  max-height: 200px;
+  max-height: 320px;
   margin: 0 0 24px 0;
-  padding: 16px;
   overflow-y: auto;
   background: #E6EBE0;
   border-radius: 3px;
   border-top: 6px solid #FFF59D;
+  border-bottom: 2px solid #D8D8D8;
 }
+
+.message {
+  margin: 0;
+  padding: 24px 16px 0 16px;
+  border-bottom: 1px solid #DBDBDB;
+}
+
+  span.name {
+    margin-right: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  span.timestamp {
+    color: #9E9E9E;
+  }
+
+  .message-text {
+    margin: 6px 0 24px 0;
+  }
 
 input[type=text] {
   width: 100%;
@@ -113,7 +120,7 @@ input[type=submit] {
   height: 42px;
   margin: 8px 0;
   padding: 0 16px;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 1px;
   color: #FAFAFA;
   background: #ED6A5A;
@@ -140,7 +147,7 @@ input[type=submit]:focus {
 
 .room-instruction {
   color: #9E9E9E;
-  margin: 0 0 12px 0;
+  margin: 0 0 6px 0;
   font-size: 14px;
 }
 
