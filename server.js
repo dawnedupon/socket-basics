@@ -7,10 +7,13 @@ var io = require('socket.io')(http);
 
 app.use(express.static(__dirname + '/public'));
 
+var clientInfo = {};
+
 io.on('connection', function(socket) {
   console.log('User connected via socket.io!');
 
   socket.on('joinRoom', function(req) {
+    clientInfo[socket.id] = req;
     socket.join(req.room);
     //sends to everyone in that room but the current socket
     socket.broadcast.to(req.room).emit('message', {
@@ -24,7 +27,7 @@ io.on('connection', function(socket) {
     console.log('Message received: ' + message.text);
 
     message.timestamp = moment().valueOf();
-    io.emit('message', message);
+    io.to(clientInfo[socket.id].room).emit('message', message); 
   });
 
   //two arguments: event name, data to send
