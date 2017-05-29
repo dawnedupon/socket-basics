@@ -28,7 +28,7 @@ function sendCurrentUsers(socket) {
 
   socket.emit('message', {
     name: 'System',
-    text: 'Current users in this room: ' + users.join(', '),
+    text: 'Currently in this room: ' + users.join(', '),
     timestamp: moment().valueOf()
   });
 }
@@ -72,7 +72,6 @@ io.on('connection', function(socket) {
       message.timestamp = moment().valueOf();
       io.to(clientInfo[socket.id].room).emit('message', message);
     }
-
   });
 
   //two arguments: event name, data to send
@@ -81,6 +80,7 @@ io.on('connection', function(socket) {
     text: 'Hello! Welcome to CatRoulette.',
     timestamp: moment().valueOf()
   });
+
 });
 
 http.listen(PORT, function() {

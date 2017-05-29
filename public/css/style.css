@@ -1,14 +1,16 @@
 body {
   width: 100%;
   height: 100%;
-  background: #5CA4A9;
+  margin: 0;
+  padding: 0;
   font-family: 'Roboto', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #616161;
-  cursor: default;
+  background: #5CA4A9;
   overflow-x: hidden;
   overflow-y: auto;
+  cursor: default;
 }
 
 * {
@@ -59,17 +61,42 @@ a:active, a:visited {
   color: #ED6A5A;
 }
 
-.container {
-  width: 90%;
-  max-width: 600px;
+.container-index,
+.container-chat {
+  width: calc(100% - 32px);
   height: auto;
-  margin: 48px auto;
-  padding: 32px 24px;
   background: #EFF2EB;
   border-top: 8px solid #BFD7D4;
   border-bottom: 5px solid #9BC1BC;
   border-radius: 3px;
+  position: fixed;
+  top: 48px;
+  left: 16px;
 }
+
+  .container-index {
+    padding: 32px;
+  }
+
+  .container-chat {
+    padding: 32px 24px;
+  }
+
+  @media screen and (min-width: 640px) {
+
+      .container-index {
+        width: 480px;
+        height: 386px;
+        top: calc((100% - 386px) / 2);
+        left: calc((100% - 480px) / 2);;
+      }
+
+      .container-chat {
+        width: 600px;
+        left: calc((100% - 600px) / 2);;
+      }
+
+  }
 
 .messages {
   width: 100%;
@@ -104,7 +131,7 @@ a:active, a:visited {
     margin: 6px 0 24px 0;
   }
 
-input[type=text] {
+input[type=text], select {
   width: 100%;
   height: 36px;
   margin: 6px auto 16px auto;
@@ -115,11 +142,15 @@ input[type=text] {
   border-radius: 3px;
 }
 
+.button-wrapper {
+  width: 100%;
+  text-align: center;
+}
+
 input[type=submit] {
-  width: 160px;
   height: 42px;
-  margin: 8px 0;
   padding: 0 16px;
+  margin: 8px 0;
   font-size: 16px;
   letter-spacing: 1px;
   color: #FAFAFA;
@@ -133,17 +164,26 @@ input[type=submit] {
   transition: 0.3s ease-in;
 }
 
-input[type=submit]:hover {
-  color: #FFFFFF;
-  background: #F08578;
-  border-bottom: 3px solid #D86152;
-}
+  .container-index input[type=submit] {
+    width: 100%;
+    margin-top: 24px;
+  }
 
-input[type=submit]:active,
-input[type=submit]:focus {
-  background: #D86152;
-  border-bottom: 3px solid #97443A;
-}
+  .container-chat input[type=submit] {
+    width: 160px;
+  }
+
+  input[type=submit]:hover {
+    color: #FFFFFF;
+    background: #F08578;
+    border-bottom: 3px solid #D86152;
+  }
+
+  input[type=submit]:active,
+  input[type=submit]:focus {
+    background: #D86152;
+    border-bottom: 3px solid #97443A;
+  }
 
 .room-instruction {
   color: #9E9E9E;

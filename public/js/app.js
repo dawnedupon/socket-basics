@@ -1,8 +1,8 @@
-var name = getQueryVariable('name') || 'Anonymous';
+var name = getQueryVariable('name') || 'Anon';
 var room = getQueryVariable('room');
 var socket = io();
 
-//Update h1 tag .room-name
+//Update h1 tag in chat.html
 jQuery('.room-name').text(room);
 
 socket.on('connect', function() {
@@ -37,9 +37,10 @@ socket.on('message', function(message) {
   text.html(message.text);
   container.append(text);
 
-
-  //$message.append('<p>' + '<span class="name">' + message.name + ' </span>' + '<span class="timestamp">' + momentTimestamp.local().format('h:mm a') + '</span></p>')
-  //$message.append('<p class="message-text">' + message.text + '</p>');
+  //Scroll to bottom of #messages
+  $("#messages").stop().animate({
+    scrollTop: $("#messages")[0].scrollHeight
+  }, 1000);
 });
 
 //Submission of new message
@@ -56,11 +57,6 @@ $form.on('submit', function(event) {
     name: name,
     text: $message.val()
   });
-
-  //Scroll to bottom of #messages
-  $("#messages").stop().animate({
-    scrollTop: $("#messages")[0].scrollHeight
-  }, 1000);
 
   //Delete the value from console after sending it
   $message.val('');
