@@ -94,7 +94,7 @@ a:active, a:visited {
   overflow-y: auto;
   background: #E6EBE0;
   border-radius: 3px;
-  border-top: 6px solid #F4F1BB;
+  border-top: 6px solid #FFF59D;
 }
 
 input[type=text] {
@@ -136,4 +136,16 @@ input[type=submit]:active,
 input[type=submit]:focus {
   background: #D86152;
   border-bottom: 3px solid #97443A;
+}
+
+.room-instruction {
+  color: #9E9E9E;
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+.highlight {
+  background: #FFF9C4;
+  padding: 0 4px;
+  color: #616161;
 }
