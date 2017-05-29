@@ -13,7 +13,7 @@ socket.on('connect', function() {
   });
 });
 
-//Create new message
+//Create new message block
 socket.on('message', function(message) {
   var momentTimestamp = moment.utc(message.timestamp);
   var $message = jQuery('#messages');
@@ -43,7 +43,7 @@ socket.on('message', function(message) {
   }, 1000);
 });
 
-//Submission of new message
+//Submit new message
 var $form = jQuery('#message-form');
 
 $form.on('submit', function(event) {

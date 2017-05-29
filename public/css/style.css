@@ -34,13 +34,21 @@ a, h1, input[type='submit'] {
   font-weight: 400;
 }
 
+.subtitle {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  margin: 8px 0 32px 0;
+}
+
 label {
   margin: 6px 0;
 }
 
 h1 {
   margin: 0 0 24px 0;
-  font-size: 32px;
+  text-align: center;
+  font-size: 28px;
 }
 
 a {
@@ -80,22 +88,6 @@ a:active, a:visited {
 
   .container-chat {
     padding: 32px 24px;
-  }
-
-  @media screen and (min-width: 640px) {
-
-      .container-index {
-        width: 480px;
-        height: 386px;
-        top: calc((100% - 386px) / 2);
-        left: calc((100% - 480px) / 2);;
-      }
-
-      .container-chat {
-        width: 600px;
-        left: calc((100% - 600px) / 2);;
-      }
-
   }
 
 .messages {
@@ -195,4 +187,28 @@ input[type=submit] {
   background: #FFF9C4;
   padding: 0 4px;
   color: #616161;
+}
+
+/*---------------
+MEDIA QUERIES
+-----------------*/
+
+@media screen and (min-width: 640px) {
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .container-index {
+    width: 500px;
+    height: 495px;
+    top: calc((100% - 495px) / 2);
+    left: calc((100% - 500px) / 2);;
+  }
+
+  .container-chat {
+    width: 600px;
+    left: calc((100% - 600px) / 2);;
+  }
+
 }
