@@ -66,7 +66,7 @@ io.on('connection', function(socket) {
   socket.on('message', function(message) {
     console.log('Message received: ' + message.text);
 
-    if (message.text === '@users') {
+    if (message.text === '@meow') {
       sendCurrentUsers(socket);
     } else {
       message.timestamp = moment().valueOf();
